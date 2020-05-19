@@ -107,7 +107,7 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 
 (Note: we assume here that you've named your environment _mycustomenv_; please replace _mycustomenv_ with whatever name you gave your environment!)
 
-##### 5. Create your own custom kernel, which will enable you to use this environment in CURC Jupyterhub:
+##### 5a. Create your own custom _python_ kernel, which will enable you to use this environment in CURC Jupyterhub:
 
 ```
 (mycustomenv) [johndoe@shas0137 ~]$ conda install -y ipykernel
@@ -116,6 +116,14 @@ Follow our Anaconda documentation for [steps on creating your own custom conda e
 
 The first command will install the ipykernel package if not installed already. The second command will create a kernel with the name _mycustomenv_ with the Jupyter display name _mycustomenv_ (note that the name and display-name are not required to match the environment name -- call them anything you want). By specifying the `--user` flag, the kernel will be in `/home/$USER/.local/share/jupyter/kernels` (a directory that is in the default __JUPYTER_PATH__) and will ensure your new kernel is available to you the next time you use CURC JupyterHub.
 
+##### 5b. Or alternatively, if you are using _R_ instead of _python_, create your own custom R kernel:
+
+```
+(mycustomenv) [johndoe@shas0137 ~]$ conda install -y irkernel
+(mycustomenv) [johndoe@shas0137 ~]$ R
+> IRkernel::installspec(name = "mycustomenv", displayname = "mycustomenv")
+> quit()
+```
 
 ##### Notes:
 * If you have already installed your own version of Anaconda or Miniconda, it is possible to create Jupyter kernels for your preexisting environments by following _Step 4_ above from within the active environment.  
