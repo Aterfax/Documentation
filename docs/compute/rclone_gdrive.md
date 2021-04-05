@@ -1,7 +1,7 @@
 ### Copy data from a google drive location to a PetaLibrary allocation
 
 
-<> # SKIP THIS SECTION, NOT NECESSARY
+<! --- # SKIP THIS SECTION, NOT NECESSARY>
 <> # create gogle drive service account
 
  <> - rclone docs are at https://rclone.org/drive/
