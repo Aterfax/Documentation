@@ -16,9 +16,12 @@
 
 #### download/install rclone and make sure you can run it
 
- - run 'rclone --version
+* Download the latest version from https://rclone.org/downloads/ and install per the developer's documentation.
+* To test, run `rclone --version` at your prompt
 
 #### configure google drive remote with rclone
+
+_note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/)_
 
 * Type `rclone config` to create a new profile for Google Drive to PetaLibrary
 * You will be prompted for whether to configure a new or existing profile
@@ -51,6 +54,11 @@
 
 * Once you are in your browser, you may be asked to authenticate to your Google account, and then you will be asked to allow Rclone to access the files in your `gdrive`. 
   * Complete this step to grant access.  If successful you'll recieve a "success" message. 
+* You will now be prompted for whether you want to configure this as a Shared Drive (Team Drive).
+  * Choose `no` (default)
+* You will now be prompted to review the configuration and confirm whether it is okay
+  * If everything looks okay, choose `yes` (default)
+* Now type `q` to quit the configuration. 
 
 
 
