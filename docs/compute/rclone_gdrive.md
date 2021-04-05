@@ -22,25 +22,25 @@
 
 * Type `rclone config` to create a new profile for Google Drive to PetaLibrary
 * You will be prompted for whether to configure a new or existing profile
- * Type `n` for "new remote"
+  * Type `n` for "new remote"
 * You will be prompted to name the new profile
-* Provide a name (e.g., `gdrive_johndoe_cu`)
+  * Provide a name (e.g., `gdrive_johndoe_cu`)
 * You will now be prompted for the type of storage to configure
-** Select the number of the option for "Google Drive" (e.g., the number is "15" for _rclone_ v1.54.1)
+  * Select the number of the option for "Google Drive" (e.g., the number is "15" for _rclone_ v1.54.1)
 * You will now be prompted for a client idy
-** do not provide one (just hit enter)
+  * do not provide one (just hit enter)
 * You will now be prompted for a client secret
-** Do not provide one (just hit enter)
+  * Do not provide one (just hit enter)
 * You will now be prompted for scope that rclone should use when requesting access from drive
-** For scope enter '1' for full drive access
+  * For scope enter '1' for full drive access
 * You will now be prompted for a root folder ID
-** Do not provide one (just hit enter)
+  * Do not provide one (just hit enter)
 * You will now be prompted for a Service Account file.
-** Do not provide one (just hit enter)
+  * Do not provide one (just hit enter)
 * You will now be prompted for "Edit Advanced Config File"?
-** Select `no` (default)
+  * Select `no` (default)
 * You will now be prompted for "Use Auto config"?  
-** Choose "Y" for yes (default). Now _rclone_ will give you a URL to use to authenticate against. It may automatically open this URL in your browser.  If it does not, you can paste the URL into your browser if you are configuring on a local machine. If you are working on a remote system (e.g., if you are logged into your lab server from home), then from a terminal you can `ssh` from your computer to the system where you are configuring rclone:
+  * Choose "Y" for yes (default). Now _rclone_ will give you a URL to use to authenticate against. It may automatically open this URL in your browser.  If it does not, you can paste the URL into your browser if you are configuring on a local machine. If you are working on a remote system (e.g., if you are logged into your lab server from home), then from a terminal you can `ssh` from your computer to the system where you are configuring rclone:
 
    ```bash
    $ port=53682
@@ -50,7 +50,7 @@
    ...now entering the url in your local browser should work.
 
 * Once you are in your browser, you may be asked to authenticate to your Google account, and then you will be asked to allow Rclone to access the files in your `gdrive`. 
-** Complete this step to grant access.  If successful you'll recieve a "success" message. 
+  * Complete this step to grant access.  If successful you'll recieve a "success" message. 
 
 
 
