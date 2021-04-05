@@ -22,7 +22,7 @@
 
 * Type `rclone config` to create a new profile for Google Drive to PetaLibrary
 * You will be prompted for whether to configure a new or existing profile
-** Type `n` for "new remote"
+ ** Type `n` for "new remote"
 * You will be prompted to name the new profile
 ** Provide a name (e.g., `gdrive_johndoe_cu`)
 * You will now be prompted for the type of storage to configure
