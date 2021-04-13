@@ -67,7 +67,7 @@ Note that _ssh-keygen_ will create two “keys”, one that is _private_ and the
 On synology:
 
 ```bash
-$cat .ssh/id_rsa.pub
+$ cat .ssh/id_rsa.pub
 ```
 _This command will dump the contents of the public keys file to your screen. Now copy the new key to your clipboard._
 ```bash
@@ -75,7 +75,7 @@ $ ssh RC_identikey@login.rc.colorado.edu
 $ mkdir -p ~/.ssh
 ```
 
-Now open the file _~/.ssh/authorized_keys_ in your favorite Linux editor (e.g., _nano_, _vi_ or _emacs_) and paste output from the _cat_ command above. Save the file and exit.
+Now open the file _~/.ssh/authorized_keys_ in your favorite Linux editor (e.g., _nano_, _vi_ or _emacs_) and paste output from your clipboard obtained from the _cat_ command above. Save the file and exit.
 
 #### Step 6: test connectivity from Synology to DTN
 
