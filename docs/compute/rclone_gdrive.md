@@ -12,7 +12,7 @@ rclone v1.54.1-DEV
 - go version: go1.16.2
 ```
 
-#### Step 2: configure google drive remote with rclone
+#### Step 2: configure google drive remote configuration
 
 _Note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/). We only list the critical steps. If a step is left out, assume you can select the default setting._
 
@@ -35,11 +35,14 @@ _Note: the steps below are also outlined in the [Rclone Documentation for Google
 * Finally, you will be prompted to review the configuration and confirm whether it is okay. If everything looks okay, choose `yes` (default)
 * Now type `q` to quit the configuration. 
 
-
-#### Step 3: Test your Google Drive remote!
+##### Now test your Google Drive remote!
 
 On your local machine type:
 ```bash
 $ rclone ls gdrive_johndoe_cu
 ```
 If this step fails, your Google Drive remote is not configured properly. Try reconfiguring your Google Drive remote again or contact rc-help@colorado.edu for assistance.
+
+#### Step 3: Create your PetaLibrary remote configuration
+
+See instructions for creating an [Rclone remote configuration for PetaLibrary](https://curc.readthedocs.io/en/latest/petalibrary/rclone.html#configure-rclone)
