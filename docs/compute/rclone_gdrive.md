@@ -1,4 +1,4 @@
-### How to copy data from a Google Drive location to a CURC PetaLibrary allocation
+### Copy data from Google Drive to PetaLibrary
 
 #### Step 1: download/install rclone and make sure you can run it
 
@@ -46,3 +46,7 @@ If this step fails, your Google Drive remote is not configured properly. Try rec
 #### Step 3: Create your PetaLibrary remote configuration
 
 See instructions for creating an [Rclone remote configuration for PetaLibrary](https://curc.readthedocs.io/en/latest/petalibrary/rclone.html#configure-rclone)
+
+
+* [Rclone documentation](https://rclone.org/)
+* [CURC data transfer documentation](https://curc.readthedocs.io/en/latest/compute/data-transfer.html)
