@@ -1,27 +1,20 @@
-### Copy data from a google drive location to a PetaLibrary allocation
+### How to copy data from a Google Drive location to a CURC PetaLibrary allocation
 
-
-<! --- # SKIP THIS SECTION, NOT NECESSARY>
-<> # create gogle drive service account
-
- <> - rclone docs are at https://rclone.org/drive/
- <> - visit https://console.developers.google.com/
-<> - a project must exist. not sure what interface looks like if no projects exist, but the top sidebar should allow you o create a new project if one does not exist. select the project you want to use, or create a new project and select it.
-<> - click 'credentials' on left sidebar
-<> - click '+ create cendentials' on top
-<> - select oauth client id'
-<> - select 'desktop app'
-<> - go to credentials, click credential name you just created, click 'download json' link at top.
-
-
-#### download/install rclone and make sure you can run it
+#### Step 1: download/install rclone and make sure you can run it
 
 * Download the latest version from https://rclone.org/downloads/ and install per the developer's documentation.
-* To test, run `rclone --version` at your prompt
+* To test, run `rclone --version` at your prompt; if the software is installed a version number will be reported back to you, similar to:
 
-#### configure google drive remote with rclone
+```
+$ rclone --version
+rclone v1.54.1-DEV
+- os/arch: freebsd/amd64
+- go version: go1.16.2
+```
 
-_note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/)_
+#### Step 2: configure google drive remote with rclone
+
+_Note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/)_
 
 * Type `rclone config` to create a new profile for Google Drive to PetaLibrary
 * You will be prompted for whether to configure a new or existing profile
@@ -103,3 +96,6 @@ _note: the steps below are also outlined in the [Rclone Documentation for Google
  - i don't know how to deauthorize rclone frmo connecting to the gdrive account
  - ssh pubkey documentation is weak, it assumes the host running rclone can connect to the dtns with a passphrase-free ssh key
  - documentation make no mention of potential dtn firewall issues
+
+
+
