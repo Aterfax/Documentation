@@ -14,88 +14,32 @@ rclone v1.54.1-DEV
 
 #### Step 2: configure google drive remote with rclone
 
-_Note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/)_
+_Note: the steps below are also outlined in the [Rclone Documentation for Google Drive](https://rclone.org/drive/). We only list the critical steps. If a step is left out, assume you can select the default setting._
 
-* Type `rclone config` to create a new profile for Google Drive to PetaLibrary
-* You will be prompted for whether to configure a new or existing profile
-  * Type `n` for "new remote"
-* You will be prompted to name the new profile
-  * Provide a name (e.g., `gdrive_johndoe_cu`)
-* You will now be prompted for the type of storage to configure
-  * Select the number of the option for "Google Drive" (e.g., the number is "15" for _rclone_ v1.54.1)
-* You will now be prompted for a client idy
-  * do not provide one (just hit enter)
-* You will now be prompted for a client secret
-  * Do not provide one (just hit enter)
-* You will now be prompted for scope that rclone should use when requesting access from drive
-  * For scope enter '1' for full drive access
-* You will now be prompted for a root folder ID
-  * Do not provide one (just hit enter)
-* You will now be prompted for a Service Account file.
-  * Do not provide one (just hit enter)
-* You will now be prompted for "Edit Advanced Config File"?
-  * Select `no` (default)
-* You will now be prompted for "Use Auto config"?  
-  * Choose "Y" for yes (default). Now _rclone_ will give you a URL to use to authenticate against. It may automatically open this URL in your browser.  If it does not, you can paste the URL into your browser if you are configuring on a local machine. If you are working on a remote system (e.g., if you are logged into your lab server from home), then from a terminal you can `ssh` from your computer to the system where you are configuring rclone:
+* Type `rclone config` to create a new profile for transferring files between Google Drive and PetaLibrary
+* When prompted for whether to configure a “new” or “existing” profile type `n` for "new remote"
+* When prompted to name the new profile provide any descriptive name you like (e.g., `gdrive_johndoe_cu`)
+* When prompted for the type of storage to configure, select the number of the option for "Google Drive" (e.g., the number is "15" for _rclone_ v1.54.1)
+* When prompted for scope that rclone should use when requesting access from Drive enter '1' for full drive access
+* When prompted for "Use Auto config?” choose "Y" for yes (default). Now _rclone_ will give you a URL to use to authenticate against. It may automatically open this URL in your browser.  If it does not, you can paste the URL into your browser if you are configuring on a local machine. If you are working on a remote system (e.g., if you are logged into your lab server from home), then from a terminal you can `ssh` from your computer to the system where you are configuring rclone:
 
    ```bash
    $ port=53682
    $ ssh -L ${port}:localhost:${port} <machine where rclone is running>
    ```
    
-   ...now entering the url in your local browser should work.
+   ...and now entering the url in your local browser should work.
 
-* Once you are in your browser, you may be asked to authenticate to your Google account, and then you will be asked to allow Rclone to access the files in your `gdrive`. 
-  * Complete this step to grant access.  If successful you'll recieve a "success" message. 
-* You will now be prompted for whether you want to configure this as a Shared Drive (Team Drive).
-  * Choose `no` (default)
-* You will now be prompted to review the configuration and confirm whether it is okay
-  * If everything looks okay, choose `yes` (default)
+* Once you are in your browser, you may be asked to authenticate to your Google account, and then you will be asked to allow Rclone to access the files in your `gdrive`. Complete this step to grant access.  If successful you'll receive a "success" message. 
+* When prompted for whether you want to configure this as a Shared Drive (Team Drive). Choose the appropriate answer; if this is your personal Drive account then choose `no` (default)
+* Finally, you will be prompted to review the configuration and confirm whether it is okay. If everything looks okay, choose `yes` (default)
 * Now type `q` to quit the configuration. 
 
 
+#### Step 3: Test your Google Drive remote!
 
-# you should now have a gdrive remote. test it!
-
- - rclone ls gdrive_jesse_cus
- - if this step fails, your gdrive remote is not configured properly
-
-
-
-# create petalibrary remote
-
- - rclone config
- - 'n' for new remote'
- - use name 'dtn_on_campus'
- - select ssh/sftp storage type
- - enter 'dtn.rc.int.colorado.edu' for host (dtn.rc.colorado.edu for off campus)
- - username can be blank (default to your username)
- - leve port blank
- - do not enter a password
- - do not enter key_pem
- - key_file should point to ssh private key that can auth against the dtns (meaning the public key is already on the dtns in ~/.ssh/authorized_keys)
- - should be able to selet defaults the everything else
-
-
-
-# again, test remote
-
- - rclone ls dtn_on_campus:/pl/active/<allocation_name>
-
-
-
-# test copying data around
-
- - rclone mkdir dtn_on_campus:/pl/active/rcops/jesse/rclone_test
- - rclone sync gdrive_jesse_cu:backups dtn_on_campus:/pl/active/rcops/jesse/rclone_test (backups is a directory in my gdrive account, this mirrors the contents of my gdrive backups directory to the jesse/rclone_test directory in the rcops allocation
-
-
-
-# PROBLEMS
-
- - i don't know how to deauthorize rclone frmo connecting to the gdrive account
- - ssh pubkey documentation is weak, it assumes the host running rclone can connect to the dtns with a passphrase-free ssh key
- - documentation make no mention of potential dtn firewall issues
-
-
-
+On your local machine type:
+```bash
+$ rclone ls gdrive_johndoe_cu
+```
+If this step fails, your Google Drive remote is not configured properly. Try reconfiguring your Google Drive remote again or contact rc-help@colorado.edu for assistance.
