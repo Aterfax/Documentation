@@ -112,6 +112,12 @@ Use of University of Colorado Research Computing resources, including (but not l
 
 .. toctree::
    :maxdepth: 2
+   :caption: CURC Hybric Cloud
+
+   hybrid-cloud/cumulus
+
+.. toctree::
+   :maxdepth: 2
    :caption: Software
 
    software/loadbalancer
@@ -141,10 +147,11 @@ Use of University of Colorado Research Computing resources, including (but not l
    additional-resources/blanca-MOU
    additional-resources/other
    additional-resources/biokem-facility
+   additional-resources/csu-xsede-usernames
 
 .. toctree::
    :maxdepth: 2
    :caption: Maintenance
 
-   maintenance/CHANGELOG
+   changelogs/CHANGELOG
 

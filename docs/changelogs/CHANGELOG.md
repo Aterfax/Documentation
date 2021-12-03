@@ -1,5 +1,13 @@
 ## CHANGELOG
 
+### Tuesday, 2 November 2021
+
+* Adding CUmulus documents for CUmulus beta release
+
+### Wednesday, 27 October 2021
+
+* Stable version of documents set: 1.0.0
+
 ### Wednesday, 17 October 2018
 
 * Configured Slurm to reject invalid jobs during queueing, rather than accept and pend forever
